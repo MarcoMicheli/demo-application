@@ -16,10 +16,10 @@ public class ApiTest {
 	
 	@GetMapping("/firstApi/{string}")
 	public String test(@PathVariable String string, @QueryParam("control") String control) {
-		if(control.equals("UPPER-CASE")) {
+		if(control.toLowerCase().equals("upper-case")) {
 			string = string.toUpperCase();
 			return string;
-		}else if(control.equals("LOWER-CASE")) {
+		}else if(control.toLowerCase().equals("lower-case")) {
 			string = string.toLowerCase();
 			return string;
 		}
